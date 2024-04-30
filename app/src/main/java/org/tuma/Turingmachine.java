@@ -12,18 +12,14 @@ public class Turingmachine {
     private int headPosition;
     private Map<String, List<Transition>> stateTransitions = new HashMap<>();
     private static final String BLANK_SYMBOL = "_";
-    private List<String> readAlphabet;
     private int stepCounter = 0;
-    private Map<String, Map<String, String>> memo = new HashMap<>();
+    // private Map<String, Map<String, String>> memo = new HashMap<>();
 
-    public Turingmachine(String code, List<String> readAlphabet) {
-        this.readAlphabet = readAlphabet;
-        codeToConfiguration(code);
+    public Turingmachine(String code, List<String> readAlphabet, List<String> writeAlphabet) {
+        codeToConfiguration(code, readAlphabet, writeAlphabet);
     }
 
-    // public Turingmachine(String flaciFilePath) {}
-
-    private void codeToConfiguration(String code) {
+    private void codeToConfiguration(String code, List<String> readAlphabet, List<String> writeAlphabet) {
         if (code.startsWith("1")) {
             code = code.substring(1);
         }
@@ -32,7 +28,7 @@ public class Turingmachine {
         Transition currentTransition;
 
         for (String transitionCode : transitionCodes) {
-            currentTransition = new Transition(transitionCode, readAlphabet);
+            currentTransition = new Transition(transitionCode, readAlphabet, writeAlphabet);
 
             if (!stateTransitions.containsKey(currentTransition.getFromState())) {
                 stateTransitions.put(currentTransition.getFromState(), new ArrayList<>());

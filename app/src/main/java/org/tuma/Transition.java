@@ -9,8 +9,10 @@ public class Transition {
     private String writeSymbol;
     private Transition.Direction direction;
     private List<String> readAlphabet;
+    private List<String> writeAlphabet;
 
-    public Transition(String transitionCode, List<String> readAlphabet) {
+    public Transition(String transitionCode, List<String> readAlphabet, List<String> writeAlphabet) {
+        this.writeAlphabet = writeAlphabet;
         this.readAlphabet = readAlphabet;
         parseTransitionCode(transitionCode);
     }
@@ -22,7 +24,7 @@ public class Transition {
         this.fromState = "q" + fields[0].length();
         this.readSymbol = codeToReadSymbol(fields[1]);
         this.toState = "q" + fields[2].length();
-        this.writeSymbol = WriteSymbol.fromString(fields[3]);
+        this.writeSymbol = codeToWriteSymbol(fields[3]);
         this.direction = Direction.fromString(fields[4]);
     }
 
@@ -30,23 +32,27 @@ public class Transition {
         return readAlphabet.get(code.length()-1);
     }
 
-    public enum WriteSymbol {
-        ZERO("0"), ONE("00"), BLANK("000");
-
-        private final String code;
-        WriteSymbol(String code) {
-            this.code = code;
-        }
-
-        public static String fromString(String code) {
-            switch (code) {
-                case "0" -> { return "0"; }
-                case "00" -> { return "1"; }
-                case "000" -> { return "_"; }
-                default -> { throw new IllegalArgumentException("Invalid write symbol code: " + code); }
-            }
-        }
+    private String codeToWriteSymbol(String code) {
+        return writeAlphabet.get(code.length()-1);
     }
+
+    // public enum WriteSymbol {
+    //     ZERO("0"), ONE("00"), BLANK("000");
+
+    //     private final String code;
+    //     WriteSymbol(String code) {
+    //         this.code = code;
+    //     }
+
+    //     public static String fromString(String code) {
+    //         switch (code) {
+    //             case "0" -> { return "0"; }
+    //             case "00" -> { return "1"; }
+    //             case "000" -> { return "_"; }
+    //             default -> { throw new IllegalArgumentException("Invalid write symbol code: " + code); }
+    //         }
+    //     }
+    // }
 
     public enum Direction {
         LEFT("0"), RIGHT("00");

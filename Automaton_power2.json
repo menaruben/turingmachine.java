@@ -1,0 +1,802 @@
+﻿{
+  "name": "power2",
+  "description": "from ||| to |||0|||0_",
+  "type": "TM",
+  "automaton": {
+    "acceptCache": [],
+    "simulationInput": [
+      "|",
+      "|",
+      "|"
+    ],
+    "Alphabet": [
+      "_",
+      "|",
+      "0",
+      "x"
+    ],
+    "StackAlphabet": [
+      "_",
+      "|",
+      "0",
+      "x"
+    ],
+    "States": [
+      {
+        "ID": 1,
+        "Name": "q1",
+        "x": 150,
+        "y": 150,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 1,
+            "Target": 2,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "_",
+                "0",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 1,
+            "Target": 1,
+            "x": 0,
+            "y": -150,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "R"
+              ]
+            ]
+          }
+        ],
+        "Start": true
+      },
+      {
+        "ID": 2,
+        "Name": "q3",
+        "x": 330,
+        "y": 150,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 2,
+            "Target": 2,
+            "x": 0,
+            "y": -150,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 2,
+            "Target": 3,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "_",
+                "|",
+                "L"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 3,
+        "Name": "q4",
+        "x": 510,
+        "y": 150,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 3,
+            "Target": 3,
+            "x": 0,
+            "y": -150,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "L"
+              ]
+            ]
+          },
+          {
+            "Source": 3,
+            "Target": 4,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "0",
+                "0",
+                "L"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 4,
+        "Name": "q5",
+        "x": 700,
+        "y": 150,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 4,
+            "Target": 4,
+            "x": 0,
+            "y": -150,
+            "Labels": [
+              [
+                "x",
+                "x",
+                "L"
+              ]
+            ]
+          },
+          {
+            "Source": 4,
+            "Target": 5,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "|",
+                "x",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 4,
+            "Target": 7,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "_",
+                "_",
+                "R"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 5,
+        "Name": "q6",
+        "x": 890,
+        "y": 150,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 5,
+            "Target": 5,
+            "x": 0,
+            "y": -150,
+            "Labels": [
+              [
+                "x",
+                "x",
+                "R"
+              ],
+              [
+                "0",
+                "0",
+                "R"
+              ],
+              [
+                "|",
+                "|",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 5,
+            "Target": 6,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "_",
+                "|",
+                "L"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 6,
+        "Name": "q7",
+        "x": 1080,
+        "y": 150,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 6,
+            "Target": 3,
+            "x": 0,
+            "y": 300,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "L"
+              ],
+              [
+                "0",
+                "0",
+                "L"
+              ],
+              [
+                "x",
+                "x",
+                "R"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 7,
+        "Name": "q8",
+        "x": 150,
+        "y": 380,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 7,
+            "Target": 7,
+            "x": 0,
+            "y": -150,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "R"
+              ],
+              [
+                "0",
+                "0",
+                "R"
+              ],
+              [
+                "x",
+                "|",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 7,
+            "Target": 8,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "_",
+                "_",
+                "L"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 8,
+        "Name": "q9",
+        "x": 150,
+        "y": 500,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 8,
+            "Target": 20,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "|",
+                "0",
+                "L"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 9,
+        "Name": "q10",
+        "x": 150,
+        "y": 670,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 9,
+            "Target": 10,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "|",
+                "_",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 9,
+            "Target": 9,
+            "x": -40,
+            "y": 0,
+            "Labels": [
+              [
+                "_",
+                "_",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 9,
+            "Target": 12,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "0",
+                "_",
+                "R"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 10,
+        "Name": "q11",
+        "x": 320,
+        "y": 670,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 10,
+            "Target": 11,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "0",
+                "0",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 10,
+            "Target": 10,
+            "x": 0,
+            "y": -150,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "R"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 11,
+        "Name": "q13",
+        "x": 490,
+        "y": 670,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 11,
+            "Target": 14,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "0",
+                "0",
+                "L"
+              ]
+            ]
+          },
+          {
+            "Source": 11,
+            "Target": 16,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "|",
+                "x",
+                "R"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 12,
+        "Name": "q12",
+        "x": 150,
+        "y": 810,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 12,
+            "Target": 12,
+            "x": -60,
+            "y": 0,
+            "Labels": [
+              [
+                "|",
+                "_",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 12,
+            "Target": 13,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "0",
+                "_",
+                "R"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 13,
+        "Name": "q2",
+        "x": 150,
+        "y": 940,
+        "Final": true,
+        "Radius": 30,
+        "Transitions": [],
+        "Start": false
+      },
+      {
+        "ID": 14,
+        "Name": "q14",
+        "x": 490,
+        "y": 800,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 14,
+            "Target": 14,
+            "x": 130,
+            "y": 0,
+            "Labels": [
+              [
+                "x",
+                "|",
+                "L"
+              ]
+            ]
+          },
+          {
+            "Source": 14,
+            "Target": 15,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "0",
+                "0",
+                "L"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 15,
+        "Name": "q15",
+        "x": 490,
+        "y": 930,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 15,
+            "Target": 9,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "_",
+                "_",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 15,
+            "Target": 15,
+            "x": 160,
+            "y": 0,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "L"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 16,
+        "Name": "q16",
+        "x": 660,
+        "y": 670,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 16,
+            "Target": 16,
+            "x": 0,
+            "y": -150,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 16,
+            "Target": 17,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "0",
+                "0",
+                "R"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 17,
+        "Name": "q17",
+        "x": 820,
+        "y": 670,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 17,
+            "Target": 17,
+            "x": 0,
+            "y": -150,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 17,
+            "Target": 18,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "_",
+                "|",
+                "L"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 18,
+        "Name": "q18",
+        "x": 960,
+        "y": 670,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 18,
+            "Target": 18,
+            "x": 0,
+            "y": -150,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "L"
+              ]
+            ]
+          },
+          {
+            "Source": 18,
+            "Target": 19,
+            "x": 0,
+            "y": 0,
+            "Labels": [
+              [
+                "0",
+                "0",
+                "L"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 19,
+        "Name": "q19",
+        "x": 960,
+        "y": 800,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 19,
+            "Target": 11,
+            "x": 0,
+            "y": 40,
+            "Labels": [
+              [
+                "x",
+                "x",
+                "R"
+              ]
+            ]
+          },
+          {
+            "Source": 19,
+            "Target": 19,
+            "x": 0,
+            "y": 40,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "L"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      },
+      {
+        "ID": 20,
+        "Name": "q20",
+        "x": 320,
+        "y": 500,
+        "Final": false,
+        "Radius": 30,
+        "Transitions": [
+          {
+            "Source": 20,
+            "Target": 20,
+            "x": 0,
+            "y": -150,
+            "Labels": [
+              [
+                "|",
+                "|",
+                "L"
+              ],
+              [
+                "0",
+                "0",
+                "L"
+              ],
+              [
+                "x",
+                "x",
+                "L"
+              ]
+            ]
+          },
+          {
+            "Source": 20,
+            "Target": 9,
+            "x": -20,
+            "y": -20,
+            "Labels": [
+              [
+                "_",
+                "_",
+                "R"
+              ]
+            ]
+          }
+        ],
+        "Start": false
+      }
+    ],
+    "lastInputs": [
+      [
+        "|",
+        "|",
+        "_"
+      ],
+      [
+        "|",
+        "|"
+      ],
+      [
+        "|",
+        "|",
+        "|",
+        "|"
+      ],
+      [
+        "|",
+        "|",
+        "|"
+      ]
+    ]
+  }
+}
