@@ -8,9 +8,9 @@ public class App {
 
     public static void main(String[] args) {
         Turingmachine turingmachine = new Turingmachine(
-            "010010001010011000101010010110001001001010011000100010001010",
+            "1010010100100110101000101001100010010100100110001010010100",
             List.of("0", "1", "_"));
-        Result<String, Verdict, String> result = turingmachine.emulate("11", 15, Turingmachine.Mode.STEP);
+        Result<String, Verdict, String> result = turingmachine.emulate("1111101100", 15, Turingmachine.Mode.STEP);
         System.out.println(result.toString());
     }
 }

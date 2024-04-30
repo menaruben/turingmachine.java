@@ -16,14 +16,14 @@ public class Transition {
     }
 
     // 0   1    00  1   000  1  0        1  00
-    // from     read    write   direction   to
+    // from     read    to      write       direction
     public void parseTransitionCode(String transitionCode) {
         String[] fields = transitionCode.split("1");
         this.fromState = "q" + fields[0].length();
         this.readSymbol = codeToReadSymbol(fields[1]);
-        this.writeSymbol = WriteSymbol.fromString(fields[2]);
-        this.direction = Direction.fromString(fields[3]);
-        this.toState = "q" + fields[4].length();
+        this.toState = "q" + fields[2].length();
+        this.writeSymbol = WriteSymbol.fromString(fields[3]);
+        this.direction = Direction.fromString(fields[4]);
     }
 
     private String codeToReadSymbol(String code) {
@@ -59,11 +59,17 @@ public class Transition {
         public static Transition.Direction fromString(String code) {
             return "0".equals(code) ? LEFT : RIGHT;
         }
+
+        public int toInt() {
+            return "0".equals(code) ? -1 : 1;
+        }
     }
 
     public String toString() {
-        return String.format("from: %s, to: %s, read: %s, write: %s, direction: %s\n",
-        fromState, toState, readSymbol, writeSymbol, direction == Transition.Direction.LEFT ? "left" : "right");
+        return String.format("from: %s, read: %s, write: %s, direction: %s, to: %s%s",
+        fromState, readSymbol, writeSymbol,
+        direction == Transition.Direction.LEFT ? "left" : "right",
+        toState, System.lineSeparator());
     }
 
     public String getFromState() {
