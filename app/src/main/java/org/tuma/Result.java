@@ -25,7 +25,19 @@ public final class Result<T1, T2, T3> {
         this.t3 = t3;
     }
 
+    public T1 getItem1() {
+        return t1;
+    }
+
+    public T2 getItem2() {
+        return t2;
+    }
+
+    public T3 getItem3() {
+        return t3;
+    }
+
     public String toString() {
-        return "word: " + t1 + ", verdict: " + t2 + ", end state: " + t3;
+        return "tape: " + t1 + ", verdict: " + t2 + ", end state: " + t3;
     }
 }
