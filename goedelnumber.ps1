@@ -217,7 +217,7 @@ $BLANK_CHAR = "_";
 $ZERO_CHAR = "NOT_IN_USE";
 $ONE_CHAR = "|";
 
-$Alphabet = @($ONE_CHAR, "0", $BLANK_CHAR, 'x')
+$Alphabet = @($ONE_CHAR,  "0", $BLANK_CHAR, 'x')
 $Inventory = [Inventory]::new(
   $Alphabet,
   $ZERO_CHAR,

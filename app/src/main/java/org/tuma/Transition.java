@@ -15,8 +15,6 @@ public class Transition {
         parseTransitionCode(transitionCode);
     }
 
-    // 0   1    00  1   000  1  0        1  00
-    // from     read    to      write       direction
     public void parseTransitionCode(String transitionCode) {
         String[] fields = transitionCode.split("1");
         this.fromState = "q" + fields[0].length();
@@ -27,7 +25,7 @@ public class Transition {
     }
 
     private String codeToWriteSymbol(String code) {
-        return writeAlphabet.get(code.length()-1);
+        return writeAlphabet.get(code.length() - 1);
     }
 
     public enum Direction {
