@@ -13,9 +13,10 @@ public class App {
             List.of("0", "|", "_", "x"));
 
         Result<List<String>, Verdict, String> result = turingmachine.emulate(
-            List.of("|", "|", "|", "|", "|", "|","|", "|"),
-            0, Turingmachine.Mode.SILENT);
+            List.of("|", "|"),
+            0, Turingmachine.Mode.STEP);
 
         System.out.println(result.toString());
+        System.out.println(result.getItem1().stream().filter(e -> "|".equals(e)).count());
     }
 }

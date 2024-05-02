@@ -8,10 +8,10 @@ public class Transition {
     private String readSymbol;
     private String writeSymbol;
     private Transition.Direction direction;
-    private List<String> writeAlphabet;
+    private List<String> tapeAlphabet;
 
-    public Transition(String transitionCode, List<String> writeAlphabet) {
-        this.writeAlphabet = writeAlphabet;
+    public Transition(String transitionCode, List<String> tapeAlphabet) {
+        this.tapeAlphabet = tapeAlphabet;
         parseTransitionCode(transitionCode);
     }
 
@@ -25,7 +25,7 @@ public class Transition {
     }
 
     private String codeToWriteSymbol(String code) {
-        return writeAlphabet.get(code.length() - 1);
+        return tapeAlphabet.get(code.length() - 1);
     }
 
     public enum Direction {

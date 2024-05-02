@@ -3,38 +3,36 @@ package org.tuma;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Turingmachine {
     private static final String INITIAL_STATE = "q1";
     private static final String ACCEPTED_STATE = "q2";
     private int headPosition;
     private Map<String, List<Transition>> stateTransitions = new HashMap<>();
-    private String blankSymbol;
+    private final String blankSymbol;
     private int stepCounter = 0;
     private String currentState;
-    private List<String> inputAlphabet;
+    private final List<String> inputAlphabet;
 
-    public Turingmachine(String code, List<String> inputAlphabet, List<String> writeAlphabet) {
-        blankSymbol = writeAlphabet.get(2);
+    public Turingmachine(String goedelNumber, List<String> inputAlphabet, List<String> tapeAlphabet) {
+        blankSymbol = tapeAlphabet.get(2);
         this.inputAlphabet = inputAlphabet;
-        codeToConfiguration(code, writeAlphabet);
+        goedelNumberToConfig(goedelNumber, tapeAlphabet);
     }
 
-    // public Turingmachine(String filepath) {}
-
-    private void codeToConfiguration(String code, List<String> writeAlphabet) {
-        if (code.startsWith("1")) {
-            code = code.substring(1);
+    private void goedelNumberToConfig(String goedelNumber, List<String> tapeAlphabet) {
+        if (goedelNumber.startsWith("1")) {
+            goedelNumber = goedelNumber.substring(1);
         }
 
-        String[] transitionCodes = code.split("11");
+        String[] transitionCodes = goedelNumber.split("11");
         Transition currentTransition;
 
         for (String transitionCode : transitionCodes) {
-            currentTransition = new Transition(transitionCode, writeAlphabet);
+            currentTransition = new Transition(transitionCode, tapeAlphabet);
 
             if (!stateTransitions.containsKey(currentTransition.getFromState())) {
                 stateTransitions.put(currentTransition.getFromState(), new ArrayList<>());
@@ -132,15 +130,13 @@ public class Turingmachine {
     }
 
     private String formatCurrentState(List<String> tape, int headPosition) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%d: ", stepCounter));
-
-        ArrayList<String> paddedList = new ArrayList<>();
-        paddedList.addAll(tape);
-        paddedList.set(headPosition, currentState);
-        paddedList.stream().forEach(sb::append);
-
-        return sb.toString();
+        int paddingSize = 15;
+        List<String> paddedList = new ArrayList<>(Collections.nCopies(tape.size() + 2 * paddingSize, "_"));
+        for (int i = 0; i < tape.size(); i++) {
+            paddedList.set(i + paddingSize, tape.get(i));
+        }
+        paddedList.add(headPosition + paddingSize, "[" + currentState + "]");
+        return String.join(" ", paddedList);
     }
 
     private boolean isValidInput(List<String> tape) {
