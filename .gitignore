@@ -4,6 +4,6 @@
 # Ignore Gradle build output directory
 build
 
-Automaton_power2.json
-goedelnumber.ps1
-power2_tm.png
+/Automaton_power2.json
+/goedelnumber.ps1
+/power2_tm.png
